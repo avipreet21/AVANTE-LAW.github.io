@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content"
+    >
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="description" content="Request a consultation with AVANTE LAW using a structured, privacy-aware appointment form.">
+    <title>Appointment | AVANTE LAW</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html" aria-label="AVANTE LAW home">
+          <span class="brand-mark">AVANTE LAW</span>
+          <span class="brand-text">Counsel. Strategy. Resolution.</span>
+        </a>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+        <nav class="nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="practice.html">Practice</a>
+          <a href="appointment.html" aria-current="page">Appointment</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+          <a class="nav-cta" href="appointment.html">Free Consultation</a>
+        </nav>
+      </header>
+
+      <main id="main-content">
+        <section class="page-banner page-section">
+          <div class="banner-card">
+            <span class="eyebrow">Appointment Request</span>
+            <h1>Request a consultation through a structured intake designed for sensitive matters.</h1>
+            <p class="page-intro">
+              This page helps visitors share only what is necessary for scheduling and initial screening. Detailed case
+              documents should be exchanged only after a protected engagement process is in place.
+            </p>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="appointment-grid">
+            <div class="info-stack">
+              <div class="info-card">
+                <strong>Initial consultation</strong>
+                <p>30-minute intake for new matters, including issue overview, urgency review, and next-step guidance.</p>
+              </div>
+              <div class="info-card">
+                <strong>Before you submit</strong>
+                <p>Have your preferred dates ready and keep the matter summary short and general.</p>
+              </div>
+              <div class="summary-card">
+                <span class="eyebrow">Preview</span>
+                <h3>Your appointment summary</h3>
+                <dl>
+                  <div>
+                    <dt>Name</dt>
+                    <dd data-summary-target="client-name">Not provided</dd>
+                  </div>
+                  <div>
+                    <dt>Practice area</dt>
+                    <dd data-summary-target="matter-type">Not provided</dd>
+                  </div>
+                  <div>
+                    <dt>Preferred date</dt>
+                    <dd data-summary-target="consult-date">Not provided</dd>
+                  </div>
+                  <div>
+                    <dt>Preferred contact</dt>
+                    <dd data-summary-target="contact-method">Not provided</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+
+            <div class="form-card">
+              <span class="eyebrow">Secure Intake</span>
+              <h2>Book your request.</h2>
+              <form action="appointment.html" method="post" data-secure-form novalidate>
+                <div class="field-grid">
+                  <div class="field">
+                    <label for="appt-name">Full name</label>
+                    <input
+                      id="appt-name"
+                      name="name"
+                      type="text"
+                      autocomplete="name"
+                      minlength="2"
+                      maxlength="80"
+                      data-summary-source="client-name"
+                      required
+                    >
+                  </div>
+                  <div class="field">
+                    <label for="appt-email">Email address</label>
+                    <input id="appt-email" name="email" type="email" autocomplete="email" maxlength="120" required>
+                  </div>
+                </div>
+                <div class="field-grid">
+                  <div class="field">
+                    <label for="appt-phone">Phone number</label>
+                    <input
+                      id="appt-phone"
+                      name="phone"
+                      type="tel"
+                      autocomplete="tel"
+                      inputmode="tel"
+                      pattern="[0-9+()\\-\\s]{10,20}"
+                      maxlength="20"
+                      required
+                    >
+                  </div>
+                  <div class="field">
+                    <label for="appt-type">Matter type</label>
+                    <select id="appt-type" name="matterType" data-summary-source="matter-type" required>
+                      <option value="">Select one</option>
+                      <option>Civil Litigation</option>
+                      <option>Family Law</option>
+                      <option>Estate Planning</option>
+                      <option>Business Advisory</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="field-grid">
+                  <div class="field">
+                    <label for="appt-date">Preferred date</label>
+                    <input id="appt-date" name="preferredDate" type="date" data-summary-source="consult-date" data-min-today required>
+                  </div>
+                  <div class="field">
+                    <label for="appt-time">Preferred time</label>
+                    <select id="appt-time" name="preferredTime" required>
+                      <option value="">Select one</option>
+                      <option>8:30 AM</option>
+                      <option>10:00 AM</option>
+                      <option>1:00 PM</option>
+                      <option>3:30 PM</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="appt-contact-method">Preferred contact method</label>
+                  <select
+                    id="appt-contact-method"
+                    name="contactMethod"
+                    data-summary-source="contact-method"
+                    required
+                  >
+                    <option value="">Select one</option>
+                    <option>Phone</option>
+                    <option>Email</option>
+                    <option>Video consultation</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="appt-summary">Short matter summary</label>
+                  <textarea
+                    id="appt-summary"
+                    name="summary"
+                    maxlength="700"
+                    minlength="20"
+                    spellcheck="false"
+                    required
+                  ></textarea>
+                  <small>Keep this general. Do not include documents, account numbers, or privileged detail here.</small>
+                </div>
+                <div class="field honeypot" aria-hidden="true">
+                  <label for="appt-company">Company</label>
+                  <input id="appt-company" name="company" type="text" tabindex="-1" autocomplete="off">
+                </div>
+                <div class="checkbox">
+                  <input id="appt-consent" name="consent" type="checkbox" required>
+                  <label for="appt-consent">I understand this request is for scheduling only and does not create a solicitor-client relationship.</label>
+                </div>
+                <button class="button" type="submit">Request Appointment</button>
+                <div class="form-status" data-form-status aria-live="polite"></div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-grid">
+          <div>
+            <div class="brand-mark">AVANTE LAW</div>
+            <p>Structured appointment intake keeps initial scheduling efficient while protecting sensitive legal information.</p>
+          </div>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="practice.html">Practice</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div class="footer-contact">
+            <a href="tel:+16045550142">(604) 555-0142</a>
+            <a href="mailto:info@avantelaw.com">info@avantelaw.com</a>
+            <span>885 West Georgia Street, Vancouver, BC</span>
+          </div>
+        </div>
+        <div class="footer-meta">
+          <span>&copy; <span data-year></span> AVANTE LAW. All rights reserved.</span>
+          <span>Pair this front-end with a server-side intake workflow before using it for live submissions.</span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
